@@ -33,7 +33,7 @@ namespace AppMaquinaLibros
             this.Libros.Add(libro2);
 
         }
-        //Validamos si la maquina ya tiene el libro
+        //Validamos si la maquina ya tiene el libro.
         public int validaLibro(string codigo)
         {
             int encontro = -1;
@@ -49,7 +49,7 @@ namespace AppMaquinaLibros
             return encontro;
         }
 
-        //Modificamos el libro
+        //Modificamos el libro.
         public bool modificarLibro(string codigo, string nombre, string categoria, double valor)
         {
             int enc = this.validaLibro(codigo);
@@ -64,13 +64,13 @@ namespace AppMaquinaLibros
             return false;
         }
 
-        //Agregamos el libro
+        //Agregamos el libro.
         public bool agregarLibro(Libro libro)
         {
             int enc = this.validaLibro(libro.Codigo);
             if (enc >= 0)
             {
-                this.Libros[enc].sumarCantidad(libro.Cantidad); //Corregir, no suma la cantidad.
+                this.Libros[enc].sumarCantidad(libro.Cantidad);
             }
             else
             {
@@ -80,7 +80,7 @@ namespace AppMaquinaLibros
             return true;
         }
 
-        //Elimina un libro de la maquina
+        //Elimina un libro de la maquina.
         public bool eliminarLibro(string codigo)
         {
             int enc = this.validaLibro(codigo);
@@ -94,7 +94,7 @@ namespace AppMaquinaLibros
             return false;
         }
 
-        //Sacamos el total de las monedas ingresadas por el usuario
+        //Sacamos el total de las monedas ingresadas por el usuario.
         public double validarMonedas(string[] monedas)
         {
             double total = 0;
@@ -109,7 +109,7 @@ namespace AppMaquinaLibros
             return total;
         }
 
-        //Vendemos un libro
+        //Vendemos un libro.
         public Libro vender(string codigo)
         {
             int enc = this.validaLibro(codigo);
@@ -132,7 +132,7 @@ namespace AppMaquinaLibros
             return null;
         }
 
-        //Listamos los libros
+        //Listamos los libros.
         public string listarLibros()
         {
             string lista = "";
