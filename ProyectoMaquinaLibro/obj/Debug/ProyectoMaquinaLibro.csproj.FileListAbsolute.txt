@@ -1,0 +1,8 @@
+D:\Proyecto Clean Code\ProyectoMaquinaLibro\ProyectoMaquinaLibro\bin\Debug\ProyectoMaquinaLibro.exe.config
+D:\Proyecto Clean Code\ProyectoMaquinaLibro\ProyectoMaquinaLibro\bin\Debug\ProyectoMaquinaLibro.exe
+D:\Proyecto Clean Code\ProyectoMaquinaLibro\ProyectoMaquinaLibro\bin\Debug\ProyectoMaquinaLibro.pdb
+D:\Proyecto Clean Code\ProyectoMaquinaLibro\ProyectoMaquinaLibro\obj\Debug\ProyectoMaquinaLibro.csproj.AssemblyReference.cache
+D:\Proyecto Clean Code\ProyectoMaquinaLibro\ProyectoMaquinaLibro\obj\Debug\ProyectoMaquinaLibro.csproj.SuggestedBindingRedirects.cache
+D:\Proyecto Clean Code\ProyectoMaquinaLibro\ProyectoMaquinaLibro\obj\Debug\ProyectoMaquinaLibro.csproj.CoreCompileInputs.cache
+D:\Proyecto Clean Code\ProyectoMaquinaLibro\ProyectoMaquinaLibro\obj\Debug\ProyectoMaquinaLibro.exe
+D:\Proyecto Clean Code\ProyectoMaquinaLibro\ProyectoMaquinaLibro\obj\Debug\ProyectoMaquinaLibro.pdb
