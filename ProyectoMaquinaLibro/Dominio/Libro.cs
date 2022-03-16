@@ -16,11 +16,31 @@ namespace AppMaquinaLibros
         public double Cambio { get; set; }
 
 
+        //Suma a la cantidad de un libro
         public void sumarCantidad(int cantidad)
         {
             this.Cantidad += cantidad;
         }
 
+        //Cambiamos el nombre de un libro en la maquina
+        public void cambiarNombre(string nombre)
+        {
+            this.Nombre = nombre;
+        }
+
+        //Cambiamos la categoria de un libro en la maquina
+        public void cambiarCategoria(string categoria)
+        {
+            this.Categoria = categoria;
+        }
+
+        //Cambiamos el valor de un libro en la maquina
+        public void cambiarValor(double valor)
+        {
+            this.Valor = valor;
+        }
+
+        //Validamos la cantidad de un libro en la maquina
         public bool validarCantidad()
         {
             if (this.Cantidad > 0)
@@ -30,6 +50,7 @@ namespace AppMaquinaLibros
             return false;
         }
 
+        //Restamos el valor ingresado por el usuario con el valor del libro y sacamos el cambio (devuelta)
         public bool validarValor(double valor)
         {
             if (this.Valor <= valor)
@@ -40,6 +61,7 @@ namespace AppMaquinaLibros
             return false;
         }
 
+        //Restamos -1 a un libro vendido
         public void restarLibro()
         {
             this.Cantidad--;

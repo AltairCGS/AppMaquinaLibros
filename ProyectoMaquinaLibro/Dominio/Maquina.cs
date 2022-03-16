@@ -15,22 +15,22 @@ namespace AppMaquinaLibros
         {
             this.Libros = new List<Libro>();
 
-            Libro nombre = new Libro();
-            nombre.Codigo = "01";
-            nombre.Nombre = "Nombre1";
-            nombre.Categoria = "Fantasia";
-            nombre.Cantidad = 5;
-            nombre.Valor = 2000;
+            Libro libro1 = new Libro();
+            libro1.Codigo = "01";
+            libro1.Nombre = "Algebra y trigonometria";
+            libro1.Categoria = "Ciencias basicas";
+            libro1.Cantidad = 10;
+            libro1.Valor = 2000;
 
-            Libro nombre2 = new Libro();
-            nombre2.Codigo = "02";
-            nombre2.Nombre = "Nombre2";
-            nombre2.Categoria = "Ficcion";
-            nombre2.Cantidad = 2;
-            nombre2.Valor = 1500;
+            Libro libro2 = new Libro();
+            libro2.Codigo = "02";
+            libro2.Nombre = "Matematicas discretas";
+            libro2.Categoria = "Ciencias basicas";
+            libro2.Cantidad = 15;
+            libro2.Valor = 5000;
 
-            this.Libros.Add(nombre);
-            this.Libros.Add(nombre2);
+            this.Libros.Add(libro1);
+            this.Libros.Add(libro2);
 
         }
         //Validamos si la maquina ya tiene el libro
@@ -49,14 +49,28 @@ namespace AppMaquinaLibros
             return encontro;
         }
 
-        //Crear metodo "modificarLibro"
+        //Modificamos el libro
+        public bool modificarLibro(string codigo, string nombre, string categoria, double valor)
+        {
+            int enc = this.validaLibro(codigo);
 
+            if (enc >= 0)
+            {
+                this.Libros[enc].cambiarNombre(nombre);
+                this.Libros[enc].cambiarCategoria(categoria);
+                this.Libros[enc].cambiarValor(valor);
+                return true;
+            }
+            return false;
+        }
+
+        //Agregamos el libro
         public bool agregarLibro(Libro libro)
         {
             int enc = this.validaLibro(libro.Codigo);
-            if (enc > 0)
+            if (enc >= 0)
             {
-                this.Libros[enc].sumarCantidad(libro.Cantidad);
+                this.Libros[enc].sumarCantidad(libro.Cantidad); //Corregir, no suma la cantidad.
             }
             else
             {
@@ -66,12 +80,7 @@ namespace AppMaquinaLibros
             return true;
         }
 
-
-
         //Elimina un libro de la maquina
-        //probando github cambios
-        //Probando otro cambio
-
         public bool eliminarLibro(string codigo)
         {
             int enc = this.validaLibro(codigo);
@@ -85,6 +94,7 @@ namespace AppMaquinaLibros
             return false;
         }
 
+        //Sacamos el total de las monedas ingresadas por el usuario
         public double validarMonedas(string[] monedas)
         {
             double total = 0;
@@ -99,7 +109,7 @@ namespace AppMaquinaLibros
             return total;
         }
 
-        // 1000-500-200-100
+        //Vendemos un libro
         public Libro vender(string codigo)
         {
             int enc = this.validaLibro(codigo);
@@ -122,6 +132,7 @@ namespace AppMaquinaLibros
             return null;
         }
 
+        //Listamos los libros
         public string listarLibros()
         {
             string lista = "";

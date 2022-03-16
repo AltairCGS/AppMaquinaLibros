@@ -15,14 +15,17 @@ namespace AppMaquinaLibros
             while (true)
             {
                 Console.WriteLine("Bienvenido a la maquina de libros");
-                Console.WriteLine(maquina.listarLibros());
-
+                Console.WriteLine("");
+                Console.WriteLine("Libros: \n{0}", maquina.listarLibros());
+                Console.WriteLine("//-------------// ");
+                Console.WriteLine("");
                 Console.WriteLine("1. Agregar libro ");
                 Console.WriteLine("2. Modificar libro ");
                 Console.WriteLine("3. Eliminar libro ");
                 Console.WriteLine("4. Comprar libro ");
                 Console.WriteLine("Ingresa una opcion: ");
                 string opcion = Console.ReadLine();
+                Console.WriteLine("");
 
                 switch (opcion)
                 {
@@ -44,18 +47,38 @@ namespace AppMaquinaLibros
                         libro.Valor = double.Parse(Console.ReadLine());
 
                         maquina.agregarLibro(libro);
-                        Console.WriteLine(maquina.listarLibros());
+                        Console.WriteLine("");
+                        Console.WriteLine("Libros: \n{0}", maquina.listarLibros());
+                        Console.WriteLine("//-------------//");
 
                         break;
                     case "2":
-                        //modificar
+                        Console.Write("Codigo: ");
+                        string ccodigo = Console.ReadLine();
+
+                        Console.Write("Nuevo nombre: ");
+                        string nnombre = Console.ReadLine();
+
+                        Console.Write("Nueva categoria: ");
+                        string ncategoria = Console.ReadLine();
+
+                        Console.Write("Nuevo valor: ");
+                        double nvalor = double.Parse(Console.ReadLine());
+
+                        maquina.modificarLibro(ccodigo, nnombre, ncategoria, nvalor);
+                        Console.WriteLine("Libros: \n{0}", maquina.listarLibros());
+                        Console.WriteLine("");
+                        Console.WriteLine("//-------------//");
+
                         break;
                     case "3":
                         Console.Write("Codigo: ");
                         string codigo = Console.ReadLine();
 
                         maquina.eliminarLibro(codigo);
-                        Console.WriteLine(maquina.listarLibros());
+                        Console.WriteLine("");
+                        Console.WriteLine("Libros: \n{0}", maquina.listarLibros());
+                        Console.WriteLine("//-------------//");
 
                         break;
                     case "4":
@@ -73,7 +96,7 @@ namespace AppMaquinaLibros
                         }
                         else
                         {
-                            Console.WriteLine("Su libro es {0} y la devuelta es {1}", lcomprado.Codigo, lcomprado.Cambio);
+                            Console.WriteLine("Su libro es {0} {1} y la devuelta es {2}", lcomprado.Codigo, lcomprado.Nombre, lcomprado.Cambio);
                         }
 
                         break;
@@ -85,6 +108,8 @@ namespace AppMaquinaLibros
                 {
                     break;
                 }
+                Console.WriteLine("");
+                Console.WriteLine("//---------------------------------------------//");
 
 
 
