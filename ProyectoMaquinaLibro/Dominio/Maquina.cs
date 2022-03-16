@@ -70,6 +70,7 @@ namespace AppMaquinaLibros
 
         //Elimina un libro de la maquina
         //probando github cambios
+        //Probando otro cambio
 
         public bool eliminarLibro(string codigo)
         {
